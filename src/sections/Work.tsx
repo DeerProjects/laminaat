@@ -23,7 +23,7 @@ import visgraat10 from "../assets/laminaat_samples/visgraat10.jpeg";
 import visgraat11 from "../assets/laminaat_samples/visgraat11.jpeg";
 import visgraat12 from "../assets/laminaat_samples/visgraat12.jpeg";
 
-const GALLERIES = {
+const GALLERIES: Record<"normaal" | "visgraat", string[]> = {
   normaal: [normal1, normal2, normal3, normal4, normal5, normal6, normal7],
   visgraat: [
     visgraat1,
@@ -53,6 +53,7 @@ export default function Work() {
       {/* Tabs */}
       <div className="mb-6 flex flex-wrap gap-3">
         <button
+          type="button"
           onClick={() => setActive("normaal")}
           className={
             "rounded-full px-5 py-2 text-sm font-semibold transition " +
@@ -65,6 +66,7 @@ export default function Work() {
         </button>
 
         <button
+          type="button"
           onClick={() => setActive("visgraat")}
           className={
             "rounded-full px-5 py-2 text-sm font-semibold transition " +
@@ -81,7 +83,7 @@ export default function Work() {
       <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {GALLERIES[active].map((img, i) => (
           <div
-            key={i}
+            key={`${active}-${i}`}
             className="overflow-hidden rounded-3xl bg-white shadow-sm ring-1 ring-slate-200"
           >
             <div className="aspect-[4/3] overflow-hidden">
