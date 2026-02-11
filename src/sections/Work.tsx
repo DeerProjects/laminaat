@@ -24,7 +24,6 @@ import visgraat11 from "../assets/laminaat_samples/visgraat11.jpeg";
 import visgraat12 from "../assets/laminaat_samples/visgraat12.jpeg";
 
 const GALLERIES: Record<"normaal" | "visgraat", string[]> = {
-  normaal: [normal1, normal2, normal3, normal4, normal5, normal6, normal7],
   visgraat: [
     visgraat1,
     visgraat2,
@@ -38,10 +37,12 @@ const GALLERIES: Record<"normaal" | "visgraat", string[]> = {
     visgraat11,
     visgraat12,
   ],
+  normaal: [normal1, normal2, normal3, normal4, normal5, normal6, normal7],
 };
 
 export default function Work() {
-  const [active, setActive] = useState<"normaal" | "visgraat">("normaal");
+  // ✅ Visgraat önde başlasın
+  const [active, setActive] = useState<"normaal" | "visgraat">("visgraat");
 
   return (
     <Section
@@ -52,19 +53,7 @@ export default function Work() {
     >
       {/* Tabs */}
       <div className="mb-6 flex flex-wrap gap-3">
-        <button
-          type="button"
-          onClick={() => setActive("normaal")}
-          className={
-            "rounded-full px-5 py-2 text-sm font-semibold transition " +
-            (active === "normaal"
-              ? "bg-slate-900 text-white"
-              : "border bg-white text-slate-700 hover:bg-slate-50")
-          }
-        >
-          Normaal
-        </button>
-
+        {/* ✅ Visgraat önde */}
         <button
           type="button"
           onClick={() => setActive("visgraat")}
@@ -76,6 +65,19 @@ export default function Work() {
           }
         >
           Visgraat
+        </button>
+
+        <button
+          type="button"
+          onClick={() => setActive("normaal")}
+          className={
+            "rounded-full px-5 py-2 text-sm font-semibold transition " +
+            (active === "normaal"
+              ? "bg-slate-900 text-white"
+              : "border bg-white text-slate-700 hover:bg-slate-50")
+          }
+        >
+          Normaal
         </button>
       </div>
 
