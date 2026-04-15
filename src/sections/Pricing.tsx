@@ -154,6 +154,9 @@ export default function Pricing() {
                 Definitieve prijs na beoordeling van foto’s of inmeten.
                 Deze prijsberekening is een indicatie. De uiteindelijke prijs kan afwijken.
                 Voor een exacte prijs adviseren wij altijd contact op te nemen met onze specialist
+                Voor een oppervlakte van 30 m² voeren wij geen standaard laminaat (recht gelegd) uit.
+                Indien u toch wenst dat wij dit realiseren, starten de kosten vanaf €250, afhankelijk
+                van de specificaties en uitvoering.
               </div>
             </div>
 
