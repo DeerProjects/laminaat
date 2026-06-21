@@ -6,18 +6,16 @@ import heroBg from "../assets/laminaat_samples/hero-bg.jpg.png";
 export default function Hero() {
   return (
     <section className="relative isolate overflow-hidden">
-      {/* background */}
       <div className="absolute inset-0 -z-10">
         <div
-        className="absolute inset-0 -z-10 bg-cover bg-center"
-        style={{ backgroundImage: `url(${heroBg})` }}
+          className="absolute inset-0 -z-10 bg-cover bg-center"
+          style={{ backgroundImage: `url(${heroBg})` }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/45 to-black/10" />
       </div>
 
       <div className="mx-auto max-w-6xl px-4 pb-16 pt-14 sm:px-6 sm:pb-20 sm:pt-16">
         <div className="grid items-center gap-10 lg:grid-cols-2">
-          {/* left */}
           <div>
             <motion.div
               initial={{ opacity: 0, y: 10 }}
@@ -30,12 +28,14 @@ export default function Hero() {
             </motion.div>
 
             <h1 className="mt-4 text-3xl font-semibold tracking-tight text-white sm:text-5xl">
-              Laminaat & PVC professioneel gelegd —{" "}
+              Laminaat, PVC & Visgraat professioneel gelegd —{" "}
               <span className="text-white/90">strak en snel.</span>
             </h1>
 
             <p className="mt-4 max-w-xl text-base text-white/85">
-              {CONTACT.description}
+              Specialist in laminaat leggen, PVC leggen, PVC visgraat,
+              visgraat laminaat, plinten en egaliseren. Wij zorgen voor een
+              strak eindresultaat met duidelijke prijzen en snelle service.
             </p>
 
             <div className="mt-6 flex flex-col gap-3 sm:flex-row">
@@ -53,11 +53,8 @@ export default function Hero() {
                 Gratis offerte aanvragen
               </a>
             </div>
-
-      
           </div>
 
-          {/* right card */}
           <motion.div
             initial={{ opacity: 0, scale: 0.98 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -97,8 +94,8 @@ export default function Hero() {
                 <div className="mt-5 rounded-2xl bg-slate-50 p-4 text-sm text-slate-600">
                   <div className="font-semibold text-slate-900">Tip</div>
                   <div className="mt-1">
-                    Foto’s van drempels, hoeken en de ondergrond helpen om direct
-                    een scherpe en vaste prijs te bepalen.
+                    Foto’s van drempels, hoeken en de ondergrond helpen om
+                    direct een scherpe en vaste prijs te bepalen.
                   </div>
                 </div>
               </div>
@@ -107,7 +104,6 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* bottom fade */}
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-gradient-to-b from-transparent to-white" />
     </section>
   );

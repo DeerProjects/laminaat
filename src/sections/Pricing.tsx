@@ -26,11 +26,11 @@ export default function Pricing() {
       case "second":
         return 8;
       case "pvc":
-        return 9;
+        return 8;
       case "visgraat":
-        return 13;
-      case "plakpvc":
         return 12;
+      case "plakpvc":
+        return 10;
       default:
         return 0;
     }
@@ -38,9 +38,9 @@ export default function Pricing() {
 
   const total = useMemo(() => {
     let sum = sqmNumber * pricePerM2;
-    if (egaliseren) sum += sqmNumber * 15;
-    sum += plintM * 2;
-    sum += hogePlintM * 5;
+    if (egaliseren) sum += sqmNumber * 14;
+    sum += plintM * 1.5;
+    sum += hogePlintM * 4;
     return sum;
   }, [sqmNumber, pricePerM2, egaliseren, plintM, hogePlintM]);
 
@@ -59,7 +59,6 @@ export default function Pricing() {
           </div>
 
           <div className="mt-4 space-y-4">
-            {/* m2 */}
             <div>
               <label className="text-xs font-semibold text-slate-700">
                 Oppervlakte (m²)
@@ -73,7 +72,6 @@ export default function Pricing() {
               />
             </div>
 
-            {/* type */}
             <div>
               <label className="text-xs font-semibold text-slate-700">
                 Type vloer
@@ -86,38 +84,30 @@ export default function Pricing() {
                 <option value="laminaat">
                   Laminaat + ondervloer (€6 / m²)
                 </option>
-                <option value="tegel">
-                  Tegel laminaat (€10 / m²)
-                </option>
+                <option value="tegel">Tegel laminaat (€10 / m²)</option>
                 <option value="second">
                   Tweedehands laminaat (€8 / m²)
                 </option>
-                <option value="pvc">
-                  PVC klikstrook (€9 / m²)
-                </option>
-                <option value="visgraat">
-                  Visgraat klik (€13 / m²)
-                </option>
+                <option value="pvc">PVC klikstrook (€8 / m²)</option>
+                <option value="visgraat">Visgraat klik (€12 / m²)</option>
                 <option value="plakpvc">
-                  Plak PVC rechte strook (€12 / m²)
+                  Plak PVC rechte strook (€10 / m²)
                 </option>
               </select>
             </div>
 
-            {/* egaliseren */}
             <label className="flex items-center gap-2 text-sm">
               <input
                 type="checkbox"
                 checked={egaliseren}
                 onChange={(e) => setEgaliseren(e.target.checked)}
               />
-              Egaliseren (3 mm incl. materiaal – €15 / m²)
+              Egaliseren (3 mm incl. materiaal – €14 / m²)
             </label>
 
-            {/* plakplint */}
             <div>
               <label className="text-xs font-semibold text-slate-700">
-                Plakplint (meter × €2)
+                Plakplint (meter × €1,5)
               </label>
               <input
                 type="number"
@@ -128,10 +118,9 @@ export default function Pricing() {
               />
             </div>
 
-            {/* hoge plint */}
             <div>
               <label className="text-xs font-semibold text-slate-700">
-                Hoge plinten (meter × €5)
+                Hoge plinten (meter × €4)
               </label>
               <input
                 type="number"
@@ -142,7 +131,6 @@ export default function Pricing() {
               />
             </div>
 
-            {/* total */}
             <div className="rounded-2xl bg-slate-50 p-4">
               <div className="text-xs font-semibold text-slate-700">
                 Indicatieve totaalprijs
@@ -151,12 +139,14 @@ export default function Pricing() {
                 € {total.toFixed(0)}
               </div>
               <div className="mt-1 text-xs text-slate-600">
-                Definitieve prijs na beoordeling van foto’s of inmeten.
-                Deze prijsberekening is een indicatie. De uiteindelijke prijs kan afwijken.
-                Voor een exacte prijs adviseren wij altijd contact op te nemen met onze specialist
-               Voor een oppervlakte van 30 m² voeren wij geen standaard laminaat (recht gelegd) uit.
-                Vanwege het kleine oppervlak valt dit niet onder onze reguliere prijsstelling. Indien
-                u toch wenst dat wij dit realiseren, maken wij graag een offerte op maat.
+                Definitieve prijs na beoordeling van foto’s of inmeten. Deze
+                prijsberekening is een indicatie. De uiteindelijke prijs kan
+                afwijken. Voor een exacte prijs adviseren wij altijd contact op
+                te nemen met onze specialist. Voor een oppervlakte van 30 m²
+                voeren wij geen standaard laminaat (recht gelegd) uit. Vanwege
+                het kleine oppervlak valt dit niet onder onze reguliere
+                prijsstelling. Indien u toch wenst dat wij dit realiseren, maken
+                wij graag een offerte op maat.
               </div>
             </div>
 
